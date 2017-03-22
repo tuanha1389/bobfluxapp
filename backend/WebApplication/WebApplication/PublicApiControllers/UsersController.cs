@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Mvc;
 
 namespace WebApplication.PublicApiControllers
 {
@@ -13,7 +14,7 @@ namespace WebApplication.PublicApiControllers
         public int UserId { get; set; }
     }
 
-    [RoutePrefix("api/Users")]
+    [System.Web.Http.RoutePrefix("api/Users")]
     public class UsersController : ApiController
     {
         // GET: api/Users
@@ -22,7 +23,7 @@ namespace WebApplication.PublicApiControllers
             return new string[] { "value1", "value2" };
         }
 
-        [Route("GetUserById")]
+        [System.Web.Http.Route("GetUserById")]
         public UserInfortest GetUserById(int id)
         {
             return new UserInfortest
